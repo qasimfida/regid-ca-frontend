@@ -1339,7 +1339,7 @@ async function updateCitationList() {
 // }
 
 const scrollIntoElem = async (chapter, id) => {
-	console.log({ id, a: document.getElementById(id) });
+	console.log({ id, a: document.getElementById(id), chapter });
 	if (document.getElementById(id)) {
 		scrollIntoView(id);
 	} else {
@@ -1403,7 +1403,7 @@ function createCitationListItem(citation) {
 	const figureDetails = document.createElement("div");
 	figureDetails.setAttribute("class", "figure-ref");
 	figureDetails.addEventListener("click", () => {
-		scrollIntoElem(citation.citation_id, citation.citation_id);
+		scrollIntoElem(citation.chapter_id, citation.citation_id);
 	});
 
 	// Add figure details
