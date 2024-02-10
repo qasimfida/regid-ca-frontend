@@ -54,11 +54,21 @@ body {
 }
 .body-content {
   background-color: #fff;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding: 3rem;
   height: 100%;
   height: auto;
   max-height: 100vh;
+  box-sizing: border-box;
+}
+.citations-col { 
+  width: 480px;
+}
+.book-col { 
+  width: 500px;
+}
+.content-col { 
+  width: 100%;
+  padding: 0 3rem;
 }
 .body-content .hide {
   display: none;
@@ -79,11 +89,6 @@ body {
 .tab_two {
   background-color: #f6f6f6;
   position: unset;
-  @media (min-width: 1400px) {
-    max-width: 328px;
-    width: 100%;
-    position: fixed;
-  }
 }
 #tab-1 .book_cover_wrapper {
   @media (max-width: 767px) {
