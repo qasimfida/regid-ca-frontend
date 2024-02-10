@@ -1299,7 +1299,16 @@ async function updateCitationList() {
 		const res = await APIS.getCitations(selectedBook);
 		if (res.success) {
 			const citations = res.data || [];
-			citations.forEach((citation) => {
+			const sorted = citations.sort((a, b) => {
+				if (a.citation_name < b.citation_name) {
+					return -1;
+				}
+				if (a.citation_name > b.citation_name) {
+					return 1;
+				}
+				return 0;
+			});
+			sorted.forEach((citation) => {
 				const figureElement = createCitationListItem(citation);
 				figureDiv.appendChild(figureElement);
 			});
@@ -1358,7 +1367,16 @@ async function updateFigureList() {
 		const res = await APIS.getFigures(selectedBook);
 		if (res.success) {
 			const figures = res.data || [];
-			figures.forEach((figure) => {
+			const sorted = figures.sort((a, b) => {
+				if (a.figure_name < b.figure_name) {
+					return -1;
+				}
+				if (a.figure_name > b.figure_name) {
+					return 1;
+				}
+				return 0;
+			});
+			sorted.forEach((figure) => {
 				const figureElement = createFigureListItem(figure);
 				figureDiv.appendChild(figureElement);
 			});
